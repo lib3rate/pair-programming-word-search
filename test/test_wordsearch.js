@@ -35,4 +35,44 @@ describe("#wordSearch()", function() {
 
     assert.isTrue(result);
   });
+
+  it("should return true if the word is present", function() {
+    const result = wordSearch([
+        ['A', 'W', 'C', 'F', 'Q', 'U', 'A', 'L'],
+        ['S', 'E', 'I', 'N', 'F', 'E', 'L', 'D'],
+        ['F', 'F', 'C', 'F', 'Q', 'U', 'A', 'L'],
+        ['R', 'M', 'J', 'T', 'E', 'V', 'R', 'G'],
+        ['A', 'H', 'C', 'S', 'Y', 'E', 'R', 'L'],
+        ['N', 'F', 'R', 'E', 'N', 'E', 'Y', 'B'],
+        ['K', 'B', 'T', 'W', 'A', 'P', 'A', 'I'],
+        ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
+        ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
+      ], 'FRANK')
+
+    assert.isTrue(result);
+  });
+
+  it("should return true if the word is present", function() {
+    const result = wordSearch([
+        ['A', 'W', 'C', 'F', 'Q', 'U', 'A', 'L'],
+        ['S', 'E', 'I', 'N', 'F', 'E', 'L', 'D'],
+        ['F', 'F', 'C', 'F', 'Q', 'U', 'A', 'L'],
+        ['R', 'M', 'J', 'E', 'E', 'V', 'R', 'G'],
+        ['A', 'H', 'C', 'M', 'Y', 'E', 'R', 'L'],
+        ['N', 'F', 'R', 'I', 'N', 'E', 'Y', 'B'],
+        ['K', 'B', 'T', 'L', 'A', 'P', 'A', 'I'],
+        ['O', 'D', 'C', 'Y', 'K', 'U', 'A', 'S'],
+        ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
+      ], 'EMILY')
+
+    assert.isTrue(result);
+  });
+
+  it("should return false if given an empty matrix", function() {
+    const result = wordSearch([
+        [],
+      ], 'EMILY')
+
+    assert.isFalse(result);
+  });
 });
